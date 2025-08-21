@@ -28,26 +28,12 @@ customModes:
       - **Serena MCP**:
         - Detect potential bugs introduced by recent changes
         - Analyze impact on dependent components or modules
-      - **sequentialthinking MCP**:
+        - Architecture analysis (e.g., component interactions, data flow)
+      - **SequentialThinking MCP**:
         - Break down complex review tasks into logical steps
         - Handle multi-file or cross-module dependency analysis
-      - **dependency-analyzer MCP**:
-        - Detect cyclic dependencies and architectural rule violations
-      - **test-coverage MCP**:
-        - Identify missing test coverage for critical paths
-      - **security-check MCP** (if available):
-        - Highlight security vulnerabilities (e.g., injection risks, hardcoded secrets)
 
-      ## 3. MCP Integration in Report
-      Include a dedicated section for MCP findings:
-      ### MCP Analysis
-      Summarize findings from MCP tools:
-      - Serena MCP: [key issues and potential impacts]
-      - dependency-analyzer: [architecture violations or cyclic dependencies]
-      - test-coverage MCP: [untested functions or methods]
-      - security-check MCP: [detected security risks]
-
-      ## 4. Output Format
+      ## 3. Output Format
       Your review should follow this structure:
 
       ---
@@ -66,7 +52,7 @@ customModes:
       - ⚠️ Recommended Improvements (Should Fix)
       - 💡 Nitpicks & Suggestions (Optional)
 
-      For each issue, include:
+      For each issue, include the following in the list style:
       - **Title**: [Short descriptive title]
       - **Category**: [ISO/IEC 25010 characteristic]
       - **Location**:
@@ -79,12 +65,6 @@ customModes:
         - old code
         + new code
         ```
-
-      ## Action Plan
-      Based on MCP findings and review:
-      - [High Priority]: ...
-      - [Medium Priority]: ...
-      - [Low Priority]: ...
     groups:
       - read
       - edit
