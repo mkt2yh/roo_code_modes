@@ -43,7 +43,7 @@ customModes:
       ## Positive Aspects
       - Highlight strengths with ISO/IEC 25010 references
 
-      ## MCP Analysis
+      ## Architecture Analysis
       - [Summarize MCP results and their implications]
 
       ## Issues
@@ -56,7 +56,7 @@ customModes:
       - **Title**: [Short descriptive title]
       - **Category**: [ISO/IEC 25010 characteristic]
       - **Location**:
-          - `[file_name:line_number](roo://path/to/file#Lline_number)`
+          - `[file_name:line_number](file path: line number)`
       - **Description**: [Clear explanation of the problem]
       - **Reasoning**: [Why it matters and potential consequences]
       - **Recommendation**: [Actionable fix or improvement]
