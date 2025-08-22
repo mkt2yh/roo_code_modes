@@ -106,7 +106,7 @@ customModes:
       ### [Short descriptive title]
       - **Category**: [ISO/IEC 25010 characteristic]
       - **Location**:
-          - `[file_name:line_number](file://absolute/path/to/file#L123)`
+          - `[file_name:line_number](file://absolute/path/to/file#:line_number)`
       - **Description**: [Clear explanation of the problem]
       - **Reasoning**: [Why it matters and potential consequences]
       - **Recommendation**: [Actionable fix or improvement]
