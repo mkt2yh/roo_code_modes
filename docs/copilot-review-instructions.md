@@ -1,0 +1,145 @@
+# GitHub Copilot Review Instructions
+
+## 1. Review Instructions
+
+- Understand the purpose of the provided code.
+- Review the code against ISO/IEC 25010 quality characteristics:
+  - Functional suitability
+  - Performance efficiency
+  - Compatibility
+  - Usability
+  - Reliability
+  - Security
+  - Maintainability
+  - Portability
+- Suggest improvements following design principles (DRY, DDD, TDD, SOLID, etc.).
+- Always explain the reasoning behind recommendations and keep the tone respectful and constructive.
+
+## 2. MCP Integration Strategy
+
+**MANDATORY**: Always use SequentialThinking MCP first to plan the review, then Serena MCP for detailed analysis.
+
+### Step 1: SequentialThinking MCP Planning (Required First)
+
+Execute SequentialThinking MCP for comprehensive review planning:
+
+1. `mcp_sequentialthinking_plan_review` - Break down the review task into logical steps
+2. `mcp_sequentialthinking_analyze_dependencies` - Map cross-module dependencies
+3. `mcp_sequentialthinking_evaluate_architecture` - Assess overall system design
+4. `mcp_sequentialthinking_prioritize_issues` - Rank findings by impact and urgency
+5. `mcp_sequentialthinking_synthesize_recommendations` - Generate actionable improvement plan
+
+Use SequentialThinking MCP especially for:
+
+- Large codebases with multiple files
+- Complex architectural decisions
+- Cross-cutting concerns analysis
+- Multi-layered dependency evaluation
+
+### Step 2: Serena MCP Detailed Analysis (Required Second)
+
+Execute these Serena MCP commands in order:
+
+1. `mcp_serena_get_symbols_overview` - Get high-level code structure
+2. `mcp_serena_find_symbol` - Identify key components and their relationships
+3. `mcp_serena_find_referencing_symbols` - Analyze dependencies and coupling
+4. `mcp_serena_search_for_pattern` - Look for anti-patterns or code smells
+5. `mcp_serena_think_about_collected_information` - Synthesize findings
+
+### Step 3: Architecture Analysis (Required)
+
+Use both MCP results to evaluate:
+
+- Component separation and single responsibility
+- Dependency inversion and loose coupling
+- Data flow and control flow patterns
+- Module boundaries and cohesion
+- Testability and maintainability aspects
+
+## 3. Output Format
+
+Your review should follow this structure:
+
+---
+
+# Design & Code Review Summary
+
+[Brief, high-level summary of the review]
+
+## Positive Aspects
+
+- Highlight strengths with ISO/IEC 25010 references
+
+## SequentialThinking MCP Planning Results
+
+### Review Strategy
+
+- [Breakdown of review task and methodology]
+
+### Cross-Module Dependencies
+
+- [Inter-module relationships and potential issues]
+
+### Architectural Assessment
+
+- [System-wide design evaluation]
+
+### Issue Prioritization
+
+- [Ranked findings with impact assessment]
+
+## Serena MCP Detailed Analysis Results
+
+### Code Structure Analysis
+
+- [Summary of symbols overview and component structure]
+
+### Dependency Analysis
+
+- [Results from symbol reference analysis]
+- [Coupling and cohesion assessment]
+
+### Pattern Analysis
+
+- [Anti-patterns or code smells identified]
+- [Architecture patterns detected]
+
+## Architecture Analysis
+
+- [Overall architectural assessment based on both MCP findings]
+- [Component interaction patterns]
+- [Scalability and maintainability implications]
+
+## Issues
+
+Categorize issues into:
+
+- 🚨 Critical Issues (Must Fix)
+- ⚠️ Recommended Improvements (Should Fix)
+- 💡 Nitpicks & Suggestions (Optional)
+
+For each issue, include the following in the list style:
+
+### [Short descriptive title]
+
+- **Category**: [ISO/IEC 25010 characteristic]
+- **Location**:
+  - `[file_name:line_number](file://absolute/path/to/file#:line_number)`
+- **Description**: [Clear explanation of the problem]
+- **Reasoning**: [Why it matters and potential consequences]
+- **Recommendation**: [Actionable fix or improvement]
+- **Suggested Code (Diff format)**:
+  ```diff
+  - old code
+  + new code
+  ```
+
+## Action Plan
+
+Based on SequentialThinking MCP planning and Serena MCP detailed analysis:
+
+- **🔥 Immediate Actions**: [Critical issues identified through strategic planning and detailed analysis]
+- **📋 Short-term Tasks**: [Recommended improvements from structured review methodology]
+- **🔮 Long-term Goals**: [Architectural improvements planned via sequential thinking approach]
+- **🧪 Testing Strategy**: [Test coverage and validation recommendations]
+- **📊 Monitoring & Metrics**: [Code quality metrics to track improvement progress]
