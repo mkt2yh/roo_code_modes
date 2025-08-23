@@ -34,12 +34,6 @@ customModes:
       4. `mcp_sequentialthinking_prioritize_issues` - Rank findings by impact and urgency
       5. `mcp_sequentialthinking_synthesize_recommendations` - Generate actionable improvement plan
 
-      Use SequentialThinking MCP especially for:
-      - Large codebases with multiple files
-      - Complex architectural decisions
-      - Cross-cutting concerns analysis
-      - Multi-layered dependency evaluation
-
       ### Step 2: Serena MCP Detailed Analysis (Required Second)
       Execute these Serena MCP commands in order:
       1. `mcp_serena_get_symbols_overview` - Get high-level code structure
@@ -65,36 +59,11 @@ customModes:
 
       ## Positive Aspects
       - Highlight strengths with ISO/IEC 25010 references
-
-      ## SequentialThinking MCP Planning Results
-      ### Review Strategy
-      - [Breakdown of review task and methodology]
-      
-      ### Cross-Module Dependencies
-      - [Inter-module relationships and potential issues]
       
       ### Architectural Assessment
-      - [System-wide design evaluation]
-      
-      ### Issue Prioritization
-      - [Ranked findings with impact assessment]
-
-      ## Serena MCP Detailed Analysis Results
-      ### Code Structure Analysis
-      - [Summary of symbols overview and component structure]
-      
-      ### Dependency Analysis
-      - [Results from symbol reference analysis]
-      - [Coupling and cohesion assessment]
-      
-      ### Pattern Analysis
-      - [Anti-patterns or code smells identified]
-      - [Architecture patterns detected]
-
-      ## Architecture Analysis
-      - [Overall architectural assessment based on both MCP findings]
-      - [Component interaction patterns]
-      - [Scalability and maintainability implications]
+      - Symbols detected: X classes, Y functions
+      - Key dependencies: A → B, B → C
+      - Detected issues: [list]
 
       ## Issues
       Categorize issues into:
