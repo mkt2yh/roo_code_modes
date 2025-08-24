@@ -75,7 +75,7 @@ customModes:
       ### [Short descriptive title]
       - **Category**: [ISO/IEC 25010 characteristic]
       - **Location**:
-          - `[file_name:line_number](file://absolute/path/to/file#:line_number)`
+          - [`file_name:line_number`](file://absolute/path/to/file#:line_number)
       - **Description**: [Clear explanation of the problem]
       - **Reasoning**: [Why it matters and potential consequences]
       - **Recommendation**: [Actionable fix or improvement]
@@ -84,6 +84,9 @@ customModes:
         - old code
         + new code
         ```
+      - **Implementation Option**: [`Apply Fix`](roo_code:implement_fix?file=file_name&line=line_number)
+        - Clicking this link will automatically apply the suggested fix (diff) using roo code.
+        - The fix is executed via MCP commands such as apply_diff.
 
       ## Action Plan
       Based on SequentialThinking MCP planning and Serena MCP detailed analysis:
