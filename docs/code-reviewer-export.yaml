@@ -79,14 +79,14 @@ customModes:
       - **Description**: [Clear explanation of the problem]
       - **Reasoning**: [Why it matters and potential consequences]
       - **Recommendation**: [Actionable fix or improvement]
-      - **Suggested Code (Diff format)**:
+      - **Proposed Fix (Diff format)**
         ```diff
         - old code
         + new code
         ```
-      - **Implementation Option**: [`Apply Fix`](roo_code:implement_fix?file=file_name&line=line_number)
-        - Clicking this link will automatically apply the suggested fix (diff) using roo code.
-        - The fix is executed via MCP commands such as apply_diff.
+      - **How to Apply Fix**
+        - [`Apply Fix`](roo_code:implement_fix?file=file_name&line=line_number)
+          (Clicking this link will automatically apply the proposed Diff fix. The MCP command (e.g., apply_diff) will be executed via roo code.)
 
       ## Action Plan
       Based on SequentialThinking MCP planning and Serena MCP detailed analysis:
