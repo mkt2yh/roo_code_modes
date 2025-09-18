@@ -63,11 +63,11 @@ customModes:
       # Design & Code Review Summary
       [Brief, high-level summary of the review]
 
-      ## Positive Aspects
-      - Highlight strengths with ISO/IEC 25010 references
-      
       ## Review targets
       - List specific folders, files, classes, or functions reviewed
+
+      ## Positive Aspects
+      - Highlight strengths with ISO/IEC 25010 references
 
       ## Findings & Recommendations
       Prioritize into:
