@@ -83,11 +83,14 @@ customModes:
       - **Description**: [Clear explanation of the problem]
       - **Reasoning**: [Why it matters and potential consequences]
       - **Recommendation**: [Actionable fix or improvement]
-      - **Proposed Fix (Diff code snippet format)**
-        ```diff
-        - old code
-        + new code
-        ```
+        *Current:*
+          ```diff
+          current code
+          ```
+        *Suggested:*
+          ```diff
+          new code
+          ```
       ## Action Plan
       Based on SequentialThinking MCP planning and Serena MCP detailed analysis:
       - **🔥 Immediate Actions**: [Critical issues identified through strategic planning and detailed analysis]
