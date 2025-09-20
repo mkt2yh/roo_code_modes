@@ -25,8 +25,6 @@ customModes:
     customInstructions: |
       ## Review Strategy
       **MANDATORY**: Always use SequentialThinking MCP first to plan the review at the beginning of each step, then Serena MCP for detailed analysis.
-
-      ### Step 1: Serena MCP Detailed Analysis (Required Second)
       Execute these Serena MCP commands in order:
       1. `mcp_serena_get_symbols_overview` - Get high-level code structure
         - Component separation and single responsibility
@@ -38,14 +36,18 @@ customModes:
         - Data flow and control flow patterns
         - Testability and maintainability aspects
       5. `mcp_serena_think_about_collected_information` - Synthesize findings
+            - Purpose: Review collected static + dynamic information to identify unevaluated quality characteristics, missing areas, or additional symbols to investigate.
+            - Instruction: "If anything is missing, internally generate a memo recommending re-running tools (read_file / find_symbol / find_referencing_symbols / search_for_pattern / execute_shell_command) as needed."
+      6. `mcp_serena_think_about_task_adherence` - Coverage / ISO 特性評価の抜け・タスク逸脱検知
+            - Purpose: Review collected static + dynamic information to identify unevaluated quality characteristics, missing areas, or additional symbols to investigate.
+            - Instruction: "If anything is missing, internally generate a memo recommending re-running tools (read_file / find_symbol / find_referencing_symbols / search_for_pattern / execute_shell_command) as needed."
+      7. `mcp_serena_think_about_whether_you_are_done` - Final completeness check
+            - Purpose: Before generating output, introspect for any major omissions (Critical Issues missed / Metrics not prepared / Evidence lacking).
+            - Instruction: "If omissions are detected, hold review output and log a decision to return to the additional collection phase (user prompt should be concise)."
 
-      ### Step 2: Architecture Analysis (Required)
-      Use serena MCP results to evaluate:
-
-      ### Step 3: Prioritized Quality Characteristic Review (Required)
       For each ISO/IEC 25010 characteristic, analyze and document:
 
-      ## 3. Output Format
+      ## Output Format
       Your review should follow this structure (例を含む):
 
       ---
