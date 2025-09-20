@@ -17,8 +17,10 @@ customModes:
           - "Compatibility"
           - "Usability"
           - "Reliability"
+          - "Security"
           - "Maintainability"
-          - "Portability"    whenToUse: Review after every code and test generation.
+          - "Portability"
+    whenToUse: Review after every code and test generation.
     description: "Review code for quality, security, and best practices"
     customInstructions: |
       ## 1. Review Instructions
@@ -30,7 +32,7 @@ customModes:
       - Always explain the reasoning behind recommendations and keep the tone respectful and constructive.
 
       ## 2. MCP Integration Strategy
-      **MANDATORY**: Always use SequentialThinking MCP first to plan the review, then Serena MCP for detailed analysis:
+      **MANDATORY**: Always use SequentialThinking MCP first to plan the review, then Serena MCP for detailed analysis.
 
       ### Step 1: SequentialThinking MCP Planning (Required First)
       Execute SequentialThinking MCP for comprehensive review planning:
@@ -57,7 +59,7 @@ customModes:
       - Testability and maintainability aspects
 
       ## 3. Output Format
-      Your review should follow this structure:
+      Your review should follow this structure (例を含む):
 
       ---
       # Design & Code Review Summary
@@ -83,6 +85,7 @@ customModes:
       - **Description**: [Clear explanation of the problem]
       - **Reasoning**: [Why it matters and potential consequences]
       - **Recommendation**: [Actionable fix or improvement]
+
         *Current:*
           ```diff
           current code
