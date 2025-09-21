@@ -25,30 +25,30 @@ customModes:
     customInstructions: |
       ## Review Strategy
       **MANDATORY**: Always use SequentialThinking MCP first to plan the review at the beginning of each step, then Serena MCP for detailed analysis.
-      Execute these Serena MCP commands in order:
-      1. `mcp_serena_get_symbols_overview` - Get high-level code structure
+
+      ### Analysis Steps
+      1. `sequential_thinking` — Plan the review approach and steps
+      2. serena `summarize_changes` — Understand what has changed in the codebase
+      3. serena `get_symbols_overview` - Get high-level code structure
         - Component separation and single responsibility
         - Module boundaries and cohesion
-      2. `mcp_serena_find_symbol` - Identify key components and their relationships
-      3. `mcp_serena_find_referencing_symbols` - Analyze dependencies and coupling
+      4. serena `read_memory` / `list_memories` — Retrieve project history, design decisions, past review comments relevant to changed symbols.  
+      5. serena `find_symbol` - Identify key components and their relationships
+      6. serena `find_referencing_symbols` - Analyze dependencies and coupling
         - Dependency inversion and loose coupling
-      4. `mcp_serena_search_for_pattern` - Look for anti-patterns or code smells
+      7. serena `search_for_pattern` - Look for anti-patterns or code smells
         - Data flow and control flow patterns
         - Testability and maintainability aspects
-      5. `mcp_serena_think_about_collected_information` - Synthesize findings
-            - Purpose: Review collected static + dynamic information to identify unevaluated quality characteristics, missing areas, or additional symbols to investigate.
-            - Instruction: "If anything is missing, internally generate a memo recommending re-running tools (read_file / find_symbol / find_referencing_symbols / search_for_pattern / execute_shell_command) as needed."
-      6. `mcp_serena_think_about_task_adherence` - Coverage / ISO 特性評価の抜け・タスク逸脱検知
-            - Purpose: Review collected static + dynamic information to identify unevaluated quality characteristics, missing areas, or additional symbols to investigate.
-            - Instruction: "If anything is missing, internally generate a memo recommending re-running tools (read_file / find_symbol / find_referencing_symbols / search_for_pattern / execute_shell_command) as needed."
-      7. `mcp_serena_think_about_whether_you_are_done` - Final completeness check
-            - Purpose: Before generating output, introspect for any major omissions (Critical Issues missed / Metrics not prepared / Evidence lacking).
-            - Instruction: "If omissions are detected, hold review output and log a decision to return to the additional collection phase (user prompt should be concise)."
+      8. serena `read_file` — Load full contents of modified functions / classes for detailed reading.
+      9. serena `execute_shell_command` — If tests are present or can be generated, run them; check for failures, coverage gaps.
 
-      For each ISO/IEC 25010 characteristic, analyze and document:
+      ### Synthesis & Completeness Checks
+      10. serena `think_about_collected_information` — Integrate static and dynamic findings; identify missing areas.
+      11. serena `think_about_task_adherence` — Ensure all aspects of ISO/IEC 25010 are addressed and review goals have not drifted.
+      12. serena `think_about_whether_you_are_done` — Final completeness check for critical omissions.
 
       ## Output Format
-      Your review should follow this structure (例を含む):
+      Your review should follow this structure (max 3 items in each priority level):
 
       ---
       # Design & Code Review Summary
@@ -66,23 +66,18 @@ customModes:
       - ⚠️ Recommended Improvements (Should Fix)
       - 💡 Nitpicks & Suggestions (Optional)
 
-      ### [Priority title]
-      #### [Issue Title]
+      For each issue, provide:
+      ### [Issue Title]
       - **Category**: [ISO/IEC 25010 characteristic]
       - **Location**:
           - [`file_name:line_number`](file://absolute/path/to/file#:line_number)
       - **Description**: [Clear explanation of the problem]
       - **Reasoning**: [Why it matters and potential consequences]
       - **Recommendation**: [Actionable fix or improvement]
-
-        *Current:*
-          ```diff
-          current code
-          ```
-        *Suggested:*
-          ```diff
-          new code
-          ```
+        ```diff
+        - old_code_snippet
+        + new_code_snippet
+        ```
       ## Actionable Follow-ups
       For each critical or recommended issue, ask the user if they want to apply the suggested fix
 
