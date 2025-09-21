@@ -8,44 +8,65 @@ customModes:
           - "always explain the \"why\" behind suggestions"
       - methodology: "step‑by‑step – first understand context and purpose, then analyze each quality characteristic"
       - approach:
-          - collaborative
           - constructive
+          - step-by-step
       - reviewFramework: "ISO/IEC 25010"
-        characteristics:
-          - "Functional suitability"
-          - "Performance efficiency"
-          - "Compatibility"
-          - "Usability"
-          - "Reliability"
-          - "Security"
-          - "Maintainability"
-          - "Portability"
     whenToUse: Review after every code and test generation.
     description: "Review code for quality, security, and best practices"
     customInstructions: |
       ## Review Strategy
-      **MANDATORY**: Always use SequentialThinking MCP first to plan the review at the beginning of each step, then Serena MCP for detailed analysis.
+      **MANDATORY**: Use SequentialThinking and serena MCPs to conduct the review as instructed below step-by-step.
 
       ### Analysis Steps
-      1. `sequential_thinking` — Plan the review approach and steps
-      2. serena `summarize_changes` — Understand what has changed in the codebase
-      3. serena `get_symbols_overview` - Get high-level code structure
-        - Component separation and single responsibility
-        - Module boundaries and cohesion
-      4. serena `read_memory` / `list_memories` — Retrieve project history, design decisions, past review comments relevant to changed symbols.  
-      5. serena `find_symbol` - Identify key components and their relationships
-      6. serena `find_referencing_symbols` - Analyze dependencies and coupling
-        - Dependency inversion and loose coupling
-      7. serena `search_for_pattern` - Look for anti-patterns or code smells
-        - Data flow and control flow patterns
-        - Testability and maintainability aspects
-      8. serena `read_file` — Load full contents of modified functions / classes for detailed reading.
-      9. serena `execute_shell_command` — If tests are present or can be generated, run them; check for failures, coverage gaps.
 
-      ### Synthesis & Completeness Checks
-      10. serena `think_about_collected_information` — Integrate static and dynamic findings; identify missing areas.
-      11. serena `think_about_task_adherence` — Ensure all aspects of ISO/IEC 25010 are addressed and review goals have not drifted.
-      12. serena `think_about_whether_you_are_done` — Final completeness check for critical omissions.
+      #### 1. Pre-Planning (Always)
+      - sequential_thinking — Generate baseline plan:
+        - List ISO/IEC 25010 categories
+        - Common anti-patterns and known pitfalls to always check
+
+      #### 2. Change Analysis
+      Use following serena MCP tools to understand the change scope and context:
+      1. `get_symbols_overview` — Project structure overview
+      2. `find_symbol` — Identify modified or important symbols
+      3. `find_referencing_symbols` — Analyze dependencies
+      4. `think_about_collected_information` — Verify understanding of change scope
+      5. `read_file` — Understand actual code changes
+      6. sequential_thinking — Refine review plan based on identified symbols and dependencies
+
+      #### 3. Contextual Planning (After Change Understanding)
+      Use following serena MCP tools to gather context:
+      - `read_memory` / `list_memories`
+        - Retrieve project history, design decisions, past review comments relevant to changed symbols.
+      - sequential_thinking — Refine plan based on actual changes:
+        - Prioritize which ISO categories matter most
+        - Select relevant anti-pattern checks
+        - Define investigation steps (which MCP, in what order, expected outputs)
+
+      #### 4. Structure & Symbols
+      Use following serena MCP tools to analyze code structure and responsibilities:
+      - `get_symbols_overview` — High-level code structure and responsibilities
+      - `find_symbol` — Locate changed or related symbols
+      - `think_about_task_adherence` — Ensure findings align with ISO/IEC 25010 functional suitability & maintainability
+
+      #### 5. Dependencies & Coupling
+      Use following serena MCP tools to analyze dependencies and coupling:
+      - `find_referencing_symbols` — Dependency and usage analysis
+      - `think_about_collected_information` — Validate coverage of dependency impacts
+
+      #### 6. Pattern & Quality Checks
+      Use following serena MCP tools to identify code quality issues:
+      - `search_for_pattern` — Detect anti-patterns, code smells, testability issues
+      - `read_file` — Only for changed/related functions or classes when detail is required
+      - `think_about_task_adherence` — Map detected issues to ISO/IEC 25010 categories
+
+      #### 7. Dynamic & Test Validation
+      Use following serena MCP tools to validate runtime behavior and test coverage:
+      - `execute_shell_command` — Run tests if available; report failures and coverage gaps
+      - `think_about_collected_information` — Integrate dynamic findings with static analysis
+
+      #### 8. Completeness & Wrap-up
+      Use following serena MCP tools to ensure thoroughness:
+      - `think_about_whether_you_are_done` — Ensure all planned checks are completed if not, follow up the gaps.
 
       ## Output Format
       Your review should follow this structure (max 3 items in each priority level):
@@ -78,6 +99,7 @@ customModes:
         - old_code_snippet
         + new_code_snippet
         ```
+
       ## Actionable Follow-ups
       For each critical or recommended issue, ask the user if they want to apply the suggested fix
 
