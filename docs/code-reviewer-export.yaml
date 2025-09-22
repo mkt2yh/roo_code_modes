@@ -20,7 +20,7 @@ customModes:
       ### Analysis Steps
 
       #### 1. Pre-Planning (Always)
-      - sequential_thinking — Generate baseline plan:
+      - sequentialthinking — Generate baseline plan:
         - List ISO/IEC 25010 categories
         - Common anti-patterns and known pitfalls to always check
 
@@ -31,13 +31,13 @@ customModes:
       3. `find_referencing_symbols` — Analyze dependencies
       4. `think_about_collected_information` — Verify understanding of change scope
       5. `read_file` — Understand actual code changes
-      6. sequential_thinking — Refine review plan based on identified symbols and dependencies
+      6. sequentialthinking — Refine review plan based on identified symbols and dependencies
 
       #### 3. Contextual Planning (After Change Understanding)
       Use following serena MCP tools to gather context:
       - `read_memory` / `list_memories`
         - Retrieve project history, design decisions, past review comments relevant to changed symbols.
-      - sequential_thinking — Refine plan based on actual changes:
+      - sequentialthinking — Refine plan based on actual changes:
         - Prioritize which ISO categories matter most
         - Select relevant anti-pattern checks
         - Define investigation steps (which MCP, in what order, expected outputs)
