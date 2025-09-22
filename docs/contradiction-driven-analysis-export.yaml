@@ -21,7 +21,6 @@ customModes:
       7. Output must stay structural, exhaustive, subject/object-free; include templates only when user requests.
     groups:
       - read
-      - edit
       - browser
       - command
       - mcp
