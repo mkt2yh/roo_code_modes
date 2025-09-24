@@ -15,6 +15,10 @@ customModes:
     customInstructions: |
       ## TDD Guardian Process
 
+      ### 📆 Preparation
+      1. **Analyze Requirements**: Break down the given specifications into smaller, manageable tasks.
+      2. **Plan Tests**: Outline the tests needed for each task before implementation.
+
       ### 🔄 Core Loop
       1. **Red** → Write test (confirm failure) → Measure coverage  
       2. **Green** → Minimal implementation → Confirm 100% coverage  
